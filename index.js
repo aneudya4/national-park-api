@@ -16,8 +16,12 @@ function renderParksInfo(responseJson) {
     $('.results-list').append(`
       <li>
         <h2 >${responseJson.data[i].name}</h2>
-        <p >${responseJson.data[i].description}</p>
-        <a href=${responseJson.data[i].url} target="_blank" >Website:${responseJson.data[i].url}</a>
+        <p >${
+          responseJson.data[i].description || 'Description Not Available'
+        }</p>
+        <a href=${responseJson.data[i].url} target="_blank" >Website:${
+      responseJson.data[i].url
+    }</a>
       </li>
       `);
   }
